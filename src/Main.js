@@ -28,7 +28,7 @@ import Cart from "./page/Cart";
 
 function Main() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="/" element={<Body />}></Route>
