@@ -974,7 +974,7 @@ async function getCartItem(collectionName, docId) {
 }
 
 // 장바구니 삭제
-async function deleteCartItem(collectionName, docId, arr, item) {
+async function deleteCartItem(collectionName, docId, arr, item, option) {
   console.log(collectionName);
   console.log(docId);
   console.log(arr);
@@ -996,16 +996,18 @@ async function deleteCartItem(collectionName, docId, arr, item) {
     CART: result,
   });
 
-  // arr에 date 넣어주기
-  const time = new Date().getTime();
-  console.log(time);
-  console.log(arr);
-  const newArr = arr.map((el, index, arr) => {
-    return { ...el, CART_TIME: time };
-  });
-  console.log(newArr);
+  if (option === true) {
+    // arr에 date 넣어주기
+    const time = new Date().getTime();
+    console.log(time);
+    console.log(arr);
+    const newArr = arr.map((el, index, arr) => {
+      return { ...el, CART_TIME: time };
+    });
+    console.log(newArr);
 
-  await addCartItem("Order", docId, ...newArr);
+    await addCartItem("Order", docId, ...newArr);
+  }
 }
 
 export {
