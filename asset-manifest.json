@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/project2_buddiz.io/static/css/main.5a21226c.css",
-    "main.js": "/project2_buddiz.io/static/js/main.10364375.js",
+    "main.css": "/project2_buddiz.io/static/css/main.bf55f7f1.css",
+    "main.js": "/project2_buddiz.io/static/js/main.3ae4de47.js",
     "static/media/캐릭터만.gif": "/project2_buddiz.io/static/media/캐릭터만.4b412edb26c1676dd540.gif",
     "static/media/buddyLogo.svg": "/project2_buddiz.io/static/media/buddyLogo.b97c1e22b69e1426c9528f0b841d1523.svg",
     "static/media/닭가슴살.png": "/project2_buddiz.io/static/media/닭가슴살.ff8919b5c103d7c64e18.png",
@@ -57,11 +57,11 @@
     "static/media/chevron-left-solid.svg": "/project2_buddiz.io/static/media/chevron-left-solid.6575d0989d1d411eb12c04f99df6e6b3.svg",
     "static/media/minus-solid.svg": "/project2_buddiz.io/static/media/minus-solid.552354b56005563d4e6c740221d31871.svg",
     "static/media/mountain-left.svg": "/project2_buddiz.io/static/media/mountain-left.a9307431d20f86b9fab18c38593b455a.svg",
-    "main.5a21226c.css.map": "/project2_buddiz.io/static/css/main.5a21226c.css.map",
-    "main.10364375.js.map": "/project2_buddiz.io/static/js/main.10364375.js.map"
+    "main.bf55f7f1.css.map": "/project2_buddiz.io/static/css/main.bf55f7f1.css.map",
+    "main.3ae4de47.js.map": "/project2_buddiz.io/static/js/main.3ae4de47.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a21226c.css",
-    "static/js/main.10364375.js"
+    "static/css/main.bf55f7f1.css",
+    "static/js/main.3ae4de47.js"
   ]
 }
