@@ -1,4 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+import { initializeApp } from "firebase/app";
 import {
   getFirestore,
   collection,
@@ -19,14 +19,14 @@ import {
   increment,
   serverTimestamp,
   onSnapshot,
-} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+} from "firebase/firestore";
 import {
   getStorage,
   ref,
   uploadBytes,
   getDownloadURL,
   deleteObject,
-} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-storage.js";
+} from "firebase/storage";
 
 const firebaseConfig = {
   // 아래 안되면 위에거로
