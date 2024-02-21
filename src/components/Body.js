@@ -29,7 +29,7 @@ import { getMainBoardData } from "../api/firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { getStoreItemDatas } from "../api/firebase";
 import ShowStar from "./Shopping-components/ShowStar";
-import basketball from "../assets/basketball-solid.svg";
+import basketball from "../assets/basketball-solid copy.svg";
 import dumbell from "../assets/dumbbell-solid.svg";
 
 function Body() {
@@ -279,6 +279,7 @@ function Body() {
               alt="basketball"
               className={styles.basketball}
             />
+            <div className={styles.communityBox} />
           </div>
         </section>
         {/* 커뮤니티 끝 */}

@@ -2,7 +2,7 @@
   "name": "project-buddiz",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sunday97.github.io/project2_buddiz.io/",
+  "homepage": "https://sunday97.github.io/project_buddiz.io/",
   "dependencies": {
     "@emailjs/browser": "^4.1.0",
     "@googlemaps/react-wrapper": "^1.1.35",
