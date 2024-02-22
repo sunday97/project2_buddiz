@@ -30,19 +30,19 @@ import {
 
 const firebaseConfig = {
   // 아래 안되면 위에거로
-  apiKey: "AIzaSyDVWZ9ODiEMQRN8FWOBV8vHR2lqmX2p6kI",
-  authDomain: "buddiz-72571.firebaseapp.com",
-  projectId: "buddiz-72571",
-  storageBucket: "buddiz-72571.appspot.com",
-  messagingSenderId: "143210608224",
-  appId: "1:143210608224:web:2f9e32fa243cbfa2d47505",
+  // apiKey: "AIzaSyDVWZ9ODiEMQRN8FWOBV8vHR2lqmX2p6kI",
+  // authDomain: "buddiz-72571.firebaseapp.com",
+  // projectId: "buddiz-72571",
+  // storageBucket: "buddiz-72571.appspot.com",
+  // messagingSenderId: "143210608224",
+  // appId: "1:143210608224:web:2f9e32fa243cbfa2d47505",
   // 위에 안되면 이거로 다시
-  // apiKey: "AIzaSyCJDkOrv7ZDSkqxHXknfxRf7G14LYnaizM",
-  // authDomain: "buddiz2.firebaseapp.com",
-  // projectId: "buddiz2",
-  // storageBucket: "buddiz2.appspot.com",
-  // messagingSenderId: "1011707955672",
-  // appId: "1:1011707955672:web:c4fa09880e47738cc10aad",
+  apiKey: "AIzaSyCJDkOrv7ZDSkqxHXknfxRf7G14LYnaizM",
+  authDomain: "buddiz2.firebaseapp.com",
+  projectId: "buddiz2",
+  storageBucket: "buddiz2.appspot.com",
+  messagingSenderId: "1011707955672",
+  appId: "1:1011707955672:web:c4fa09880e47738cc10aad",
 };
 const { v4: uuidv4 } = require("uuid");
 // Initialize Firebase
@@ -63,7 +63,7 @@ async function getAddress(collectionName) {
 
 // 관리자 데이터 가져오는 함수
 async function getManager(collectionName) {
-  const docRef = doc(db, collectionName, "66c8WvyDzH9M35fb1KTK");
+  const docRef = doc(db, collectionName, "myKd0tZ4VBpM7scVHsg3");
   const docSnapshot = await getDoc(docRef);
   console.log(docRef);
   console.log(docSnapshot);
@@ -146,12 +146,13 @@ async function addData(collectionName, formData) {
 }
 
 // 채팅방 생성 함수
-async function addChatRoom(collectionName, data1, data2) {
+async function addChatRoom(collectionName, data1, data2, data3) {
   const uuid = uuidv4(); // uuidv4 함수를 사용하여 UUID 생성
   const ref = collection(db, collectionName);
   const result = await addDoc(ref, {
     DOCID: uuid,
     docId: [data1, data2],
+    TITLE: data3,
   });
 
   const docSnap = await getDoc(result);
@@ -194,7 +195,7 @@ async function nicknameComparison(collectionName, nickname, phone) {
   return result;
 }
 
-// 메인페이지 조회수가 가장많은 게시글 5개 가져오기
+// 메인페이지 조회수가 가장많은 게시글 8개 가져오기
 async function getMainBoardData(collectionName) {
   const docQuery = query(
     collection(db, collectionName),

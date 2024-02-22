@@ -10,7 +10,7 @@ import {
   doc,
   getDoc,
   getDocs,
-} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+} from "firebase/firestore";
 import styles from "./Chatbody.module.css";
 import { useLocation } from "react-router-dom";
 import Chatnav from "./Chatnav";
