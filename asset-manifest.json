@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/project_buddiz.io/static/css/main.bf55f7f1.css",
-    "main.js": "/project_buddiz.io/static/js/main.c5e1b1ad.js",
+    "main.css": "/project_buddiz.io/static/css/main.7952d0ca.css",
+    "main.js": "/project_buddiz.io/static/js/main.05b888af.js",
     "static/media/캐릭터만.gif": "/project_buddiz.io/static/media/캐릭터만.4b412edb26c1676dd540.gif",
     "static/media/buddyLogo.svg": "/project_buddiz.io/static/media/buddyLogo.b97c1e22b69e1426c9528f0b841d1523.svg",
     "static/media/닭가슴살.png": "/project_buddiz.io/static/media/닭가슴살.ff8919b5c103d7c64e18.png",
@@ -26,6 +26,7 @@
     "static/media/tree6.svg": "/project_buddiz.io/static/media/tree6.deea7586364b849d792fa01faaec89bc.svg",
     "static/media/mountain-right.svg": "/project_buddiz.io/static/media/mountain-right.49e13543e855ddf35b7bc15e0659cffb.svg",
     "static/media/basket.svg": "/project_buddiz.io/static/media/basket.ef9aa0bcb423a68e2918d60c4f4a2dd3.svg",
+    "static/media/basketball-solid copy.svg": "/project_buddiz.io/static/media/basketball-solid copy.08e8d2942c183639713b2993f7a34382.svg",
     "static/media/basketball-solid.svg": "/project_buddiz.io/static/media/basketball-solid.f158b7e80b5657cb6a3e40e65a6da060.svg",
     "static/media/person-swimming-solid.svg": "/project_buddiz.io/static/media/person-swimming-solid.27b88933bba0f6560668bbb74ce45960.svg",
     "static/media/futbol-regular.svg": "/project_buddiz.io/static/media/futbol-regular.ba199e9a17f3c41b4a689d55afa27824.svg",
@@ -41,6 +42,7 @@
     "static/media/letter.svg": "/project_buddiz.io/static/media/letter.dad23fece0ec46c08f7983ab25b7be27.svg",
     "static/media/user.svg": "/project_buddiz.io/static/media/user.d9035d5e2918a76774eec23adc969f86.svg",
     "static/media/cloud2.svg": "/project_buddiz.io/static/media/cloud2.5381d3c63c80a831589320d59f67205b.svg",
+    "static/media/dumbbell-solid copy.svg": "/project_buddiz.io/static/media/dumbbell-solid copy.c57911ba00a34a759720f0f83d847e16.svg",
     "static/media/dumbbell-solid.svg": "/project_buddiz.io/static/media/dumbbell-solid.bf7540cc5c21167a240858d74a644bfe.svg",
     "index.html": "/project_buddiz.io/index.html",
     "static/media/cart-shopping-solid.svg": "/project_buddiz.io/static/media/cart-shopping-solid.4c17683d3e0d97c290c447533c1ad060.svg",
@@ -57,11 +59,11 @@
     "static/media/chevron-left-solid.svg": "/project_buddiz.io/static/media/chevron-left-solid.6575d0989d1d411eb12c04f99df6e6b3.svg",
     "static/media/minus-solid.svg": "/project_buddiz.io/static/media/minus-solid.552354b56005563d4e6c740221d31871.svg",
     "static/media/mountain-left.svg": "/project_buddiz.io/static/media/mountain-left.a9307431d20f86b9fab18c38593b455a.svg",
-    "main.bf55f7f1.css.map": "/project_buddiz.io/static/css/main.bf55f7f1.css.map",
-    "main.c5e1b1ad.js.map": "/project_buddiz.io/static/js/main.c5e1b1ad.js.map"
+    "main.7952d0ca.css.map": "/project_buddiz.io/static/css/main.7952d0ca.css.map",
+    "main.05b888af.js.map": "/project_buddiz.io/static/js/main.05b888af.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf55f7f1.css",
-    "static/js/main.c5e1b1ad.js"
+    "static/css/main.7952d0ca.css",
+    "static/js/main.05b888af.js"
   ]
 }
