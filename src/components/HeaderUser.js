@@ -10,17 +10,14 @@ import { Link } from "react-router-dom";
 function HeaderUser({ onClick, memberData, imgClick, setImgClick, Logout }) {
   return (
     <>
-      <Img
-        onClick={onClick}
-        className={`${styles.iconCircle} ${styles.login}`}
-      >
+      <Img onClick={onClick} className={`${styles.iconCircle} ${styles.login}`}>
         <img src={user} alt="user" />
         {memberData && imgClick ? (
           <div className={styles.logBox}>
             <p className={styles.userName}>
               {memberData} <span>님</span>
             </p>
-            <Link to={"/mypage"}>
+            <Link to={"mypage"}>
               <div
                 className={styles.btn}
                 onClick={(e) => {
@@ -40,7 +37,7 @@ function HeaderUser({ onClick, memberData, imgClick, setImgClick, Logout }) {
         )}
       </Img>
     </>
-  )
+  );
 }
 
-export default HeaderUser
+export default HeaderUser;

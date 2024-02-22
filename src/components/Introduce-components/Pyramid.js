@@ -9,7 +9,7 @@ import {
   LineElement,
   Tooltip,
   BarElement,
-} from "chart.js";
+} from "chart.js/auto";
 import styles from "./Pyramid.module.css";
 
 ChartJS.register(

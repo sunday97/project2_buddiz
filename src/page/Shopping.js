@@ -41,7 +41,7 @@ function Shopping() {
 
   useState(() => {
     onLoad();
-  }, [originItems]);
+  }, []);
 
   // 카테고리별 정렬
   useEffect(() => {
@@ -136,7 +136,12 @@ function Shopping() {
       console.log("sales");
       setItems((prevItems) => {
         return prevItems.slice().sort((a, b) => {
-          return b["STORE_SALES"] - a["STORE_SALES"];
+          console.log(b["STORE_SALES"]);
+          console.log(a["STORE_SALES"]);
+          return (
+            (b["STORE_SALES"] === undefined ? 0 : b["STORE_SALES"]) -
+            (a["STORE_SALES"] === undefined ? 0 : a["STORE_SALES"])
+          );
         });
       });
     }
