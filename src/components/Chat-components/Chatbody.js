@@ -10,7 +10,7 @@ import {
   doc,
   getDoc,
   getDocs,
-} from "firebase/firestore";
+} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 import styles from "./Chatbody.module.css";
 import { useLocation } from "react-router-dom";
 import Chatnav from "./Chatnav";
@@ -33,7 +33,7 @@ function Chat() {
   // location data저장
   const [chatData, setChatData] = useState("");
   // 색상 state
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState(0);
 
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState(``);
@@ -103,13 +103,16 @@ function Chat() {
     }
   }, [otherId, getFirst]);
 
+  console.log(messages);
+
   // 채팅방 리스트 불러오기
   useEffect(() => {
     const names = [];
     const unsubscribe = onSnapshot(collection(db, "Chat"), (snapshot) => {
       snapshot.docs.map((doc) => {
-        // console.log({ doc: doc.id, ...doc.data() });
-        names.push(doc.id);
+        const data = doc.data();
+        const room = { id: doc.id, ...data };
+        names.push(room);
       });
       setOtherName(names);
     });
@@ -135,11 +138,11 @@ function Chat() {
     }
   };
 
-  const handleChetChange = (e) => {
-    setColor(e.target.textContent);
-    const target = e.target.textContent;
-    console.log(target);
-    setOtherId(target);
+  const handleChetChange = (text, count) => {
+    setColor(count);
+    // const target = e.target.textContent;
+    // console.log(target);
+    setOtherId(text);
     setChatdocId([]);
   };
   console.log(otherId);
@@ -155,19 +158,24 @@ function Chat() {
       return "";
     }
   };
-
+  console.log(otherName[0]?.docId[0]);
   return (
     <>
       <Chatnav />
       <div className={styles.container}>
         <ul className={styles.chatContainer}>
-          {otherName.map((el) => (
+          {otherName.map((el, index) => (
             <li
-              className={color != el ? styles.chatlist : styles.chatlistColor}
-              key={el}
-              onClick={(e) => handleChetChange(e)}
+              className={
+                color !== index ? styles.chatlist : styles.chatlistColor
+              }
+              key={el?.id}
+              onClick={() => handleChetChange(el?.id, index)}
             >
-              {el}
+              {el?.TITLE}
+              {color === index
+                ? el?.docId?.map((name, index) => <div key={index}>{name}</div>)
+                : ""}
             </li>
           ))}
         </ul>
