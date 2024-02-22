@@ -17,17 +17,19 @@ function HeaderUser({ onClick, memberData, imgClick, setImgClick, Logout }) {
             <p className={styles.userName}>
               {memberData} <span>님</span>
             </p>
-            <Link to={"mypage"}>
-              <div
-                className={styles.btn}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setImgClick(false);
-                }}
-              >
+
+            <div
+              className={styles.btn}
+              onClick={(e) => {
+                e.stopPropagation();
+                setImgClick(false);
+              }}
+            >
+              <Link to={"mypage"} style={{ color: "#666666" }}>
                 마이페이지
-              </div>
-            </Link>
+              </Link>
+            </div>
+
             <div onClick={Logout} className={styles.btn}>
               로그아웃
             </div>
