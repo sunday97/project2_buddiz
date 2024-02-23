@@ -48,7 +48,7 @@ const MapComponent = ({
   // 채팅 중복 확인
   const [chat, setChat] = useState([]);
 
-  console.log(currentUser[0]?.MEM);
+  console.log(currentUser[0]);
 
   useEffect(() => {
     // items 상태가 변경될 때마다 MEM_ADDRESS 값을 로그에 출력합니다.
@@ -57,6 +57,8 @@ const MapComponent = ({
     );
     // console.log(memAddresses);
   }, [items]);
+
+  console.log(items);
 
   const handleLoad = async () => {
     try {
@@ -135,6 +137,7 @@ const MapComponent = ({
   const docid = items.map((item) => item.docId);
 
   const handleMarkerClick = async (index, dataAll, docId) => {
+    console.log(index);
     console.log(docId);
     console.log(dataAll);
     // const currentMockItem = items[index];
@@ -171,46 +174,36 @@ const MapComponent = ({
     console.log(`선택된 사용자 정보 :`, e.target.lastChild.value);
     const memValue = e.target.lastChild.value;
     console.log(chat);
-    // const myArray = chat?.filter(
-    //   (item) => item?.docId[0] == currentUser[0]?.MEM
-    // );
-    // 이거는 다시생각
+
+    // 채팅방에 내가 만든게 있는지 확인
     const otherArray = chat?.filter(
       (item) =>
-        item?.id[0] == currentUser[0]?.MEM || item?.id[1] == currentUser[0]?.MEM
+        (item?.docId[0] === currentUser[0]?.MEM_NICKNAME &&
+          item?.docId[1] === memValue) ||
+        (item?.docId[1] === currentUser[0]?.MEM_NICKNAME &&
+          item?.docId[0] === memValue)
     );
     console.log(otherArray); // ['liio89@nate.com', 'limyonso@gmail.com']
 
-    // const twoArray = chat?.docId.includes(currentUser[0]?.MEM) || chat?.docId.includes(memValue)
-
-    // console.log(twoArray); // ['liio89@nate.com', 'limyonso@gmail.com']
-    // console.log(myArray); // ['liio89@nate.com', 'limyonso@gmail.com']
-    // console.log(otherArray); // ['liio89@nate.com', 'limyonso@gmail.com']
-
-    // console.log(chat);
+    // 채팅방 생성 및 이동
     if (otherArray[0]?.id) {
       alert("이미 채팅방이 있습니다.");
       navigation("/chatting", { state: otherArray[0]?.id });
     } else {
-      const chatRoom = await addChatRoom("Chat", currentUser[0]?.MEM, memValue);
-      console.log(chatRoom);
-      if (chatRoom) {
-        navigation("/chatting", { state: chatRoom?.doc });
+      const title = window.prompt("채팅방 제목을 입력하세요.");
+      if (title) {
+        const chatRoom = await addChatRoom(
+          "Chat",
+          currentUser[0]?.MEM_NICKNAME,
+          memValue,
+          title
+        );
+        console.log(chatRoom);
+        if (chatRoom) {
+          navigation("/chatting", { state: chatRoom?.doc });
+        }
       }
     }
-
-    // memdocId = e.target.lastChild.value;
-    // // setMeminfo(e.target.lastChild.value);
-    // console.log(meminfo);
-    // const otherUser = { MEM: e.target.lastChild.value };
-    // if (memdocId) {
-    //   console.log(otherUser);
-    //   // const chatId =
-    //   //   currentUser && otherUser
-    //   //     ? [currentUser[0].MEM, otherUser.MEM].sort().join("-")
-    //   //     : null;
-    //   navigation("/chatting", { state: memdocId });
-    // }
   };
 
   return (
@@ -237,6 +230,7 @@ const MapComponent = ({
               {coordinatesTwo.map((coordinates, index) => {
                 const currentDocId = items;
                 const currentMockItem = items[index];
+                console.log(currentMockItem);
                 // console.log(currentDocId);
 
                 // MEM_ADDRESS가 존재할 때만 마커를 생성
@@ -330,9 +324,7 @@ const MapComponent = ({
                                       {info?.manager && (
                                         <button
                                           className={styles.delMarler}
-                                          onClick={() =>
-                                            deleteDarker(item?.docId)
-                                          }
+                                          onClick={() => deleteDarker(item?.id)}
                                         >
                                           X
                                         </button>
@@ -344,7 +336,7 @@ const MapComponent = ({
                                         채팅 하러 가기
                                         <input
                                           type="hidden"
-                                          value={item?.BFS_docid}
+                                          value={item?.BFS_NICKNAME}
                                         />
                                       </button>
                                     </div>
